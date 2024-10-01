@@ -56,7 +56,7 @@ pip install google-api-python-client google-auth numpy pandas seaborn matplotlib
 
 ## How to Run this program:
 
-1. Insert your API key and channel ID into the script.:
+1. Insert your API key and channel ID into the script.
 3. Visual Studio Code with python extension
  
 ## License
