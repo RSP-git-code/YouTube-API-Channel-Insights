@@ -14,7 +14,7 @@ This project analyzes data from a specific YouTube channel using the YouTube Dat
 ## Prerequisites
 Before running the project, ensure you have the following installed:
 - Python 3.x
-- Generate an api key from [https://developers.google.com/youtube/v3]
+- Generate an api key from [https://console.cloud.google.com/apis/library/youtube.googleapis.com?project=hybrid-carrier-428808-a0]
 - Take channel id from a specific channel you want to retrieve data from
 - Required libraries: 
   - `googleapiclient`
