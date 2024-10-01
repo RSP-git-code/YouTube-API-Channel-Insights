@@ -51,22 +51,14 @@ pip install google-api-python-client google-auth numpy pandas seaborn matplotlib
 
    ![Boxplot of Views and Likes](./images/boxplot_views_likes.png)
 
-## How to Run
+## How to Run this program:
 1. Clone this repository:
    ```bash
    git clone <your-repo-link>
    ```
 2. Insert your API key and channel ID into the script.
-3. Run the script to fetch data and generate visualizations:
-   ```bash
-   python youtube_analysis.py
-   ```
-
-## Future Improvements
-- Add functionality to analyze comments or engagement metrics.
-- Automate data fetching for multiple channels.
-- Include additional visualizations, such as time-based trends for video performance.
-
+3. Visual Studio Code with python extension
+ 
 ## License
 This project is licensed under the MIT License.
 
