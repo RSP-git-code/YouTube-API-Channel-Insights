@@ -14,6 +14,8 @@ This project analyzes data from a specific YouTube channel using the YouTube Dat
 ## Prerequisites
 Before running the project, ensure you have the following installed:
 - Python 3.x
+- Generate an api key from [https://developers.google.com/youtube/v3]
+- Take channel id from a specific channel you want to retrieve data from
 - Required libraries: 
   - `googleapiclient`
   - `numpy`
@@ -39,7 +41,7 @@ pip install google-api-python-client google-auth numpy pandas seaborn matplotlib
 - The fetched video data is saved into an Excel file `videodata.xlsx`.
 - Data is processed to convert views and likes to numeric values for analysis.
   
-## Visualizations
+## Visualizations of the data collected from the channel:
 1. **Top 10 Videos by Views**:
    - A bar plot shows the 10 most viewed videos on the channel.
 
@@ -53,11 +55,8 @@ pip install google-api-python-client google-auth numpy pandas seaborn matplotlib
 
 
 ## How to Run this program:
-1. Clone this repository:
-   ```bash
-   git clone <your-repo-link>
-   ```
-2. Insert your API key and channel ID into the script.
+
+1. Insert your API key and channel ID into the script.:
 3. Visual Studio Code with python extension
  
 ## License
