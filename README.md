@@ -50,7 +50,7 @@ pip install google-api-python-client google-auth numpy pandas seaborn matplotlib
 2. **Boxplot of Log-Transformed Views and Likes**:
    - A boxplot displays the distribution of log-transformed views and likes to identify trends and outliers.
 
-   [image](https://github.com/user-attachments/assets/de77419f-acef-47e3-8eef-e33456ee6a42)
+   ![image](https://github.com/user-attachments/assets/de77419f-acef-47e3-8eef-e33456ee6a42)
 
 
 ## How to Run this program:
