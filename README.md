@@ -44,14 +44,13 @@ pip install google-api-python-client google-auth numpy pandas seaborn matplotlib
 ## Visualizations of the data collected from the channel:
 1. **Top 10 Videos by Views**:
    - A bar plot shows the 10 most viewed videos on the channel.
-
-   ![Top 10 Videos by Views] ![image](https://github.com/user-attachments/assets/7a150ba6-4f64-41bf-a10d-3f1ac75230f6)
+ ![image](https://github.com/user-attachments/assets/7a150ba6-4f64-41bf-a10d-3f1ac75230f6)
 
    
 2. **Boxplot of Log-Transformed Views and Likes**:
    - A boxplot displays the distribution of log-transformed views and likes to identify trends and outliers.
 
-   ![Boxplot of Views and Likes]![image](https://github.com/user-attachments/assets/de77419f-acef-47e3-8eef-e33456ee6a42)
+   [image](https://github.com/user-attachments/assets/de77419f-acef-47e3-8eef-e33456ee6a42)
 
 
 ## How to Run this program:
