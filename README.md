@@ -1,6 +1,3 @@
-Here's a sample `README.md` for your YouTube Channel Analysis project:
-
----
 
 # YouTube Channel Analysis Using API
 
@@ -73,6 +70,3 @@ pip install google-api-python-client google-auth numpy pandas seaborn matplotlib
 ## License
 This project is licensed under the MIT License.
 
----
-
-Make sure to adjust file paths or other specifics as needed.
