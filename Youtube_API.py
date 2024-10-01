@@ -6,14 +6,17 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
-api_key= 'AIzaSyDgebGltkHpIRdZUh9RpzrEhpwCVKzFTgY'
-channel_id='UC95LfIzLCj48ZQyKDzVaYnA'
+api_key= #Replace with your own generated API KEY
+channel_id=# Replace with the required YouTube channel's unique ID
 youtube=build('youtube','v3',developerKey=api_key)
 #Function to get channel statistics
 def get_channel_stats(youtube,channel_id):
+     #Converts requests in list format:
      request=youtube.channels().list(
        part='snippet,contentDetails, statistics',id=channel_id)
+     #Executes the request
      response=request.execute()
+     #The dictionary contains all data of youtube channel i.e subcribercount ,likes etc
      data=dict( Channel_name=response['items'][0]['snippet']['title'],
                Subscriber_count= response['items'][0]['statistics']['subscriberCount'],
                 Views=response['items'][0]['statistics']['viewCount'],
@@ -72,14 +75,17 @@ def get_video_details(youtube, video_ids):
     
     return all_video_stats
 
-# Assuming `youtube` is your authenticated YouTube API client and `video_ids` is your list of video IDs
+#Details about youtube videos
 video_details = get_video_details(youtube, video_ids)
 print(video_details)
 import pandas as pd
+#Converting  chunk of datas in dataframe for better analysis:
 video_data = pd.DataFrame(video_details)
+#Convert this data frame in excel file
 video_data.to_excel('videodata.xlsx', index=False)
 video_data['Views'] = pd.to_numeric(video_data['Views'], errors='coerce')
 top_10_videos =video_data.sort_values(by='Views',ascending=False).head(10)
+#Plot of a horizontal bar graph:
 plt.figure(figsize=(12, 10))
 sns.barplot(x='Views', y='Title', data=top_10_videos,palette="mako")
 plt.xlabel('Views')
