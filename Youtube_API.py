@@ -1,3 +1,4 @@
+#Importing libraries required :
 from datetime import datetime,timedelta
 from googleapiclient.discovery import build
 import numpy as np
@@ -11,12 +12,12 @@ channel_id=# Replace with the required YouTube channel's unique ID
 youtube=build('youtube','v3',developerKey=api_key)
 #Function to get channel statistics
 def get_channel_stats(youtube,channel_id):
-     #Converts requests in list format:
+     #Sends request to get snippet, contentDetails, and statistics about the channel in list format:
      request=youtube.channels().list(
        part='snippet,contentDetails, statistics',id=channel_id)
      #Executes the request
      response=request.execute()
-     #The dictionary contains all data of youtube channel i.e subcribercount ,likes etc
+     # Extracts relevant data into a dictionary:
      data=dict( Channel_name=response['items'][0]['snippet']['title'],
                Subscriber_count= response['items'][0]['statistics']['subscriberCount'],
                 Views=response['items'][0]['statistics']['viewCount'],
@@ -39,6 +40,7 @@ def get_video_id(youtube,playlistid):
          video_ids.append(response['items'][i]['contentDetails']['videoId'])
     next_page_token=response.get('nextPageToken' )
     more_pages=True
+      # Checks if more pages of results exist and processes them if needed
     while more_pages:
          if next_page_token is None:
               more_pages=False
@@ -60,7 +62,8 @@ def get_video_details(youtube, video_ids):
     for j in range(0, len(video_ids), 30):
         request = youtube.videos().list(
             part='snippet,statistics', 
-            id=','.join(video_ids[j:j+30])  # Adjusting the batch size to 30
+             # Adjusting the batch size to 30 to avoid exceeding API limit
+            id=','.join(video_ids[j:j+30])  
         )
         response = request.execute()
         for video in response['items']:
@@ -78,7 +81,6 @@ def get_video_details(youtube, video_ids):
 #Details about youtube videos
 video_details = get_video_details(youtube, video_ids)
 print(video_details)
-import pandas as pd
 #Converting  chunk of datas in dataframe for better analysis:
 video_data = pd.DataFrame(video_details)
 #Convert this data frame in excel file
